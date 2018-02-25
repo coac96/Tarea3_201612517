@@ -59,6 +59,7 @@ public class Tarea3_201612517 {
                 switch(menuU){
                     //INGRESAR USUARIOS
                     case "1":
+                        //ALGORITMO PARA VERIFICAR USUARIOS
                         while (contadorU != 5){
                             System.out.println("Ingresar Usuario: "+(1+contadorU));
                             verificador = 0;
@@ -88,6 +89,7 @@ public class Tarea3_201612517 {
                             System.out.println(usuario[4-c]);
                         }
                         break;
+                        //OPCION DE SALIDA A MENU PRINCIPAL
                     case "4":
                             menuU = "4";
                         break;
@@ -98,6 +100,7 @@ public class Tarea3_201612517 {
                 break;
             case "2":
                 do{
+                    //MENU CONTADOR DE DIGITOS
                 System.out.println("--------CONTADOR DE DIGITOS--------------");
                 System.out.println("1. Ingresar Numero");
                 System.out.println("2. Mostrar numero de digitos");
@@ -106,6 +109,7 @@ public class Tarea3_201612517 {
                 switch(menuU){
                     case "1":
                         do{
+                            //VERIFICADOR DEL INTERVALO DEL NUMERO
                         System.out.println("Ingresar un numero entre 0 y 100000 que desea: ");
                         numero = lector.nextInt();
                         if((numero > 0)){
@@ -136,10 +140,12 @@ public class Tarea3_201612517 {
                     default:
                           System.out.println("OPCION INCORRECTA");  
                 }
+                //CICLADOR DE MENU EN CASO DE UN NUMERO DIFERENTE DEL MENU
                 }while(menuU != "4");
                 break;
             case "3":
                 do{
+                    //MENU NUMEROS DE MAYOR A MENOR
                     System.out.println("-----------NUMEROS DE MAYOR A MENOR--------------");
                     System.out.println("1. Ingresar Numero");
                     System.out.println("2. Mostrar Ordenados");
@@ -151,6 +157,7 @@ public class Tarea3_201612517 {
                         while(contadorU != 3){
                         verificador = 0;
                         numero = lector.nextInt();
+                        //VERIFICADOR DE NUMERO YA INGRESADO
                         if(contadorU == 0){
                             l_numeros[contadorU] = numero;
                             contadorU++;
@@ -161,15 +168,18 @@ public class Tarea3_201612517 {
                                 }
                             }
                             if(verificador == 0){
+                                //INGRESA NUMERO 
                                 l_numeros[contadorU] = numero;
                                 contadorU++;
                             }else{
+                                //SE RECHAZA EL NUMERO
                                 System.out.println("numero ya ingresado");
                             }
                         }
                     }                        
                     break;
                     case "2":
+                        // ALGORITMO PARA ORDENAR LOS NUMEROS
                         for(int f = 0; f < l_numeros.length; f++){
                             for(int g = 0; g< l_numeros.length;g++){
                                 if(l_numeros[g] < l_numeros[f]){
@@ -179,12 +189,14 @@ public class Tarea3_201612517 {
                                 }
                             }
                         }
+                        //IMPRESION DE NUMEROS
                         System.out.println("NUMEROS ORDENADOS");
                         for(int imprimir = 0; imprimir < l_numeros.length; imprimir++){
                             System.out.println(l_numeros[imprimir]);
                         }
                     break;
                     case "4":
+                        //SALIDA DE MENU "ORDENAR NUMEROS"
                         menuP = "4";
                     break;
                     default:
@@ -194,6 +206,7 @@ public class Tarea3_201612517 {
                 break;
             case "4":
                 do{
+                    //MENU CALCULAR PROMEDIO
                     System.out.println("------------CALCULAR PROMEDIO----------");
                     System.out.println("1. Ingresar notas de los 6 alumnos");
                     System.out.println("2. Mostrar notas y promedios");
@@ -201,6 +214,7 @@ public class Tarea3_201612517 {
                     menuU = lector.next();
                     switch(menuU){
                         case "1":
+                            // VERIFICADOR PARA EVITAR UN ID DE ALUMNO IGUAL
                             contadorU = 0;
                             while (contadorU != 6){
                             System.out.println("Ingresar ID del alumno: "+(1+contadorU));
@@ -212,19 +226,23 @@ public class Tarea3_201612517 {
                                 }
                             }
                             if(verificador == 0){
+                                //VERIFICADOR E INGRESADOR DE NOTAS, NO ACEPTA LETRAS.
                                 notas[contadorU][0] = numero;
                                 contadorU++;
                                 for(int b = 1; b < 5; b++){
                                     System.out.println("Ingresar Nota "+b+":");
                                     notas[contadorU][b] = lector.nextInt();
                                 }
+                                //CALCULAR PROMEDIO
                                 notas[contadorU][5] = (notas[contadorU][1]+notas[contadorU][2]+notas[contadorU][3]+notas[contadorU][4])/4;
                             }else{
+                                //SE RECHAZA EL ID YA REPETIDO
                                 System.out.println("ERROR ID YA INGRESADO");
                             }
                         }
                             break;
                         case "2": 
+                            //IMPRESION DE LA LISTA DE ALUMNO, COMO DE SUS NOTAS
                             for(int fila = 0; fila < 6; fila++){
                                 for(int columna = 0; columna < 6; columna++){
                                     System.out.print("  |  "+notas[fila][columna]+"  |  ");
@@ -233,6 +251,7 @@ public class Tarea3_201612517 {
                             }
                             break;
                         case "4":
+                            // SALIDA DE MENU PROMEDIO
                             menuU = "4";
                             break;
                         default:
@@ -243,6 +262,7 @@ public class Tarea3_201612517 {
                 }while (menuU != "4");
                 break;
             case "5":
+                // SALIDA DEL PROGRAMA
                 System.out.println("Hasta Pronto");
                 menuP = "5";
                 break;
@@ -250,6 +270,7 @@ public class Tarea3_201612517 {
                 System.out.println("ERROR EN SELECCION MENU PRINCIPAL");
                  
         }
+        // VERIFICACION DE CICLO.
         }while(menuP != "5" );
     }
     
